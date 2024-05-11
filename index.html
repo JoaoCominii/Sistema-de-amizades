@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de amizades</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Meu perfil -->
+      <div class="profile-info">
+        <img src="imgs/perfil.png" id="profile-img" />
+        <div>
+          <div class="profile-name">José</div>
+          <span id="selected-status"></span>
+        </div>
+        <div class="status">
+          <select id="status-select"> <!-- Preciso alterar o selecionador para ficar so status -->
+            <option value="online" class="online">Online</option>
+            <option value="ausente" class="ausente">Ausente</option>
+            <option value="offline" class="offline">Offline</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <h1>Amigos</h1>
+      </div>
+      <div class="search-friends">
+        <input type="text" placeholder="Buscar amigos..." />
+        <button id="add-friends-btn">
+          <img src="add-friend-icon.png" alt="Adicionar Amigos" />
+        </button>
+      </div>
+    </header>
+    <div id="friend-list"><!-- Lista de amigos --></div>
+    <script src="script.js"></script>
+  </body>
+</html>

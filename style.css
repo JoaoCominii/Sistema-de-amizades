@@ -1,0 +1,76 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+/* Estilos para o meu perfil */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-name {
+  margin-right: 10px;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+#profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header h1 {
+    font-size: 28px;
+    align-items: center;
+  }
+
+#selected-status {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.online {
+  color: green;
+}
+
+.ausente {
+  color: orange;
+}	
+
+.offline {
+  color: red;
+}
+
+.status select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.search-friends input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#add-friends-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#add-friends-btn img {
+  width: 30px;
+  height: 30px;
+}
