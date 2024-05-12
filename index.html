@@ -10,9 +10,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-GEFqjWfKoWfJ3Q3P4RS7dGO1e7sD1exXwCbA8JMHPOHHgzXF6tUUTA48yvfh3QBBgNUkJ9fMkdScxklKIZDn9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
+      <!-- Cabeçalho -->
       <!-- Meu perfil -->
       <div class="profile-info">
         <img src="imgs/perfil.png" id="profile-img" />
@@ -21,7 +29,8 @@
           <span id="selected-status"></span>
         </div>
         <div class="status">
-          <select id="status-select"> <!-- Preciso alterar o selecionador para ficar so status -->
+          <select id="status-select">
+            <!-- Preciso alterar o selecionador para ficar so status -->
             <option value="online" class="online">Online</option>
             <option value="ausente" class="ausente">Ausente</option>
             <option value="offline" class="offline">Offline</option>
@@ -34,11 +43,31 @@
       <div class="search-friends">
         <input type="text" placeholder="Buscar amigos..." />
         <button id="add-friends-btn">
-          <img src="add-friend-icon.png" alt="Adicionar Amigos" />
+          <i class="fa-solid fa-user-plus fa-xl" style="color: #000000"></i>
         </button>
       </div>
     </header>
-    <div id="friend-list"><!-- Lista de amigos --></div>
+
+    <!-- Lista de amigos -->
+    <div id="lista-amigos">
+      <section id="amigos-online" class="amigos-online">
+        <!-- Online -->
+        <h2>
+          Amigos Online <span id="contador-online" class="contador">(0)</span>
+        </h2>
+      </section>
+      <section id="amigos-offline" class="amigos-offline">
+        <!-- Offline -->
+        <h2>
+          Amigos Offline <span id="contador-offline" class="contador">(0)</span>
+        </h2>
+      </section>
+    </div>
+
     <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b8fea98a0b.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

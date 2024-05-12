@@ -3,7 +3,7 @@
   margin: 0;
 }
 
-/* Estilos para o meu perfil */
+/* Estilos para o cabecalho */
 header {
   display: flex;
   justify-content: space-between;
@@ -31,13 +31,13 @@ header {
 }
 
 header h1 {
-    font-size: 28px;
-    align-items: center;
-  }
+  font-size: 28px;
+  align-items: center;
+}
 
 #selected-status {
-    padding: 5px;
-    font-size: 12px;
+  padding: 5px;
+  font-size: 12px;
 }
 
 .online {
@@ -46,7 +46,7 @@ header h1 {
 
 .ausente {
   color: orange;
-}	
+}
 
 .offline {
   color: red;
@@ -68,9 +68,83 @@ header h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
+
 }
 
-#add-friends-btn img {
-  width: 30px;
-  height: 30px;
+
+
+/* Estilos para a lista de amigos */
+
+#lista-amigos {
+  display: flex;
+  flex-direction: column;
+}
+/* Online */
+.amigos-online h2 {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+}
+
+.contador {
+  position: absolute;
+  right: 0;
+  margin-right: 855px;
+}
+
+.amigo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.amigo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.amigo-info {
+  display: flex; /* Ativa o flexbox para o conteúdo das informações do amigo */
+  flex-direction: column; /* Empilha as informações verticalmente */
+}
+
+.amigo-info h3 {
+  /* Estilos para o nome do amigo */
+  font-size: 18px;
+  margin-left: 12px;
+}
+
+.amigo-info p:nth-child(2) {
+  /* Estilos para o jogo */
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 3px;
+  padding-left: 5px;
+}
+
+.amigo-info p:nth-child(3) {
+  /* Estilos para o jogo */
+  font-size: 12px;
+  color: #666;
+  padding-left: 5px;
+}
+
+/* Oflline */
+.amigos-offline h2 {
+  position: relative;
+  margin-top: 300px;
+  margin-bottom: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
 }
