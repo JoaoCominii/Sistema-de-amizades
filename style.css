@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap%27%29%3B);
+
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -33,6 +35,10 @@ header {
 header h1 {
   font-size: 28px;
   align-items: center;
+  display: flex;
+  position: absolute
+  justify-content center;
+  margin-right: 60px;
 }
 
 #selected-status {
@@ -57,21 +63,74 @@ header h1 {
   border-radius: 5px;
 }
 
-.search-friends input {
-  padding: 5px;
+/* Estilo para barra de pesquisa*/
+.search-friends {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 1650px;
+  background-color: #0a1b2d;
+  height: 30px;
+  padding: 10px;
+  border-radius: 40px;
+  justify-content: space-between;
+}
+.search-friends:hover > .search-txt {
+  width: 180px;
+  padding: 0 6px;
+  transition: 0.5s;
+}
+
+.search-friends:hover > .search-btn {
+  background-color: white;
+  transition: 0.5s;
+}
+.search-txt {
   border: none;
-  border-radius: 5px;
-  margin-right: 10px;
+  background-color: transparent;
+  outline: none;
+  padding: 0;
+  color: white;
+  font-size: 12px;
+  line-height: 40px;
+  width: 0;
+  font-family: "Open Sans";
+  font-size: medium;
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0a1b2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-friends img {
+  width: 20px;
+  height: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: #1e3754;
+}
+
+/* Estilo para botão de adicionar amigos */
+.add-friends {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 255px;
 }
 
 #add-friends-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
-
 }
-
-
 
 /* Estilos para a lista de amigos */
 
@@ -92,10 +151,8 @@ header h1 {
   border-bottom: 2px solid #ccc;
 }
 
-.contador {
-  position: absolute;
-  right: 0;
-  margin-right: 855px;
+.contador  {
+  margin-right: 1700px;
 }
 
 .amigo {
@@ -147,4 +204,41 @@ header h1 {
   padding: 10px;
   background-color: #f0f0f0;
   border-bottom: 2px solid #ccc;
+}
+
+/* Configuracao diferentes tamanhos de tela */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-info {
+    margin-top: 10px;
+  }
+
+  .profile-name {
+    margin-left: 0;
+  }
+
+  header h1 {
+    margin-top: 10px;
+  }
+
+  .search-friends {
+    margin-left: 0;
+  }
+
+  .add-friends {
+    margin-top: 10px;
+  }
+
+  #lista-amigos {
+    margin-top: 10px;
+  }
+  /* Estilo para barra de pesquisa*/
+  .search-friends {
+    margin-left: 200px;
+  }
 }

@@ -57,42 +57,44 @@ function atualizarContadores() {
   const contadorOffline = document.getElementById("contador-offline");
 
   // Atualiza o contador de amigos online
-  contadorOnline.textContent = '(' + amigosOnline.querySelectorAll(".amigo").length + ')';
+  contadorOnline.textContent =
+    "(" + amigosOnline.querySelectorAll(".amigo").length + ")";
 
   // Atualiza o contador de amigos offline
-  contadorOffline.textContent = '(' + amigosOffline.querySelectorAll(".amigo").length + ')'; 
+  contadorOffline.textContent =
+    "(" + amigosOffline.querySelectorAll(".amigo").length + ")";
 }
 
 // Loop pelos amigos e cria um elemento para cada um
-amigos.forEach(function(amigo) {
+amigos.forEach(function (amigo) {
   // Cria um elemento <div> para representar o amigo
-  const divAmigo = document.createElement('div');
-  divAmigo.classList.add('amigo');
+  const divAmigo = document.createElement("div");
+  divAmigo.classList.add("amigo");
 
   // Adiciona a imagem do avatar ao elemento do amigo
-  const imgAvatar = document.createElement('img');
+  const imgAvatar = document.createElement("img");
   imgAvatar.src = amigo.avatar;
   imgAvatar.alt = amigo.username;
   divAmigo.appendChild(imgAvatar);
 
   // Cria um elemento <div> para as informações do amigo
-  const divInfo = document.createElement('div');
-  divInfo.classList.add('amigo-info');
-  
+  const divInfo = document.createElement("div");
+  divInfo.classList.add("amigo-info");
+
   // Adiciona o nome do amigo
-  const h3Nome = document.createElement('h3');
+  const h3Nome = document.createElement("h3");
   h3Nome.textContent = amigo.username;
   divInfo.appendChild(h3Nome);
 
   // Verifica se o amigo está offline antes de adicionar as informações de jogo e sala
   if (amigo.status !== "offline") {
     // Adiciona o jogo do amigo
-    const pJogo = document.createElement('p');
-    pJogo.textContent = "Jogo: " + amigo.jogo;
+    const pJogo = document.createElement("p");
+    pJogo.textContent = "Jogando: " + amigo.jogo;
     divInfo.appendChild(pJogo);
 
     // Adiciona a sala do amigo
-    const pSala = document.createElement('p');
+    const pSala = document.createElement("p");
     pSala.textContent = "Sala: " + amigo.sala;
     divInfo.appendChild(pSala);
   }
@@ -109,4 +111,23 @@ amigos.forEach(function(amigo) {
 
   // Atualiza os contadores
   atualizarContadores();
+});
+
+// Barra de pesquisa
+const searchBar = document.getElementById("search-input");
+
+searchBar.addEventListener("input", function () {
+  const term = searchBar.value.toLowerCase();
+  const amigosElements = document.querySelectorAll(".amigo-info h3");
+
+  amigosElements.forEach(function (amigoElement) {
+    const amigoNome = amigoElement.textContent.toLowerCase();
+    const amigoParent = amigoElement.parentElement.parentElement;
+
+    if (amigoNome.includes(term)) {
+      amigoParent.style.display = "flex";
+    } else {
+      amigoParent.style.display = "none";
+    }
+  });
 });
