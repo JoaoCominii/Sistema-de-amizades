@@ -1,0 +1,125 @@
+{
+    "amigos": [
+      {
+        "id": 1,
+        "username": "João",
+        "avatar": "imgs/amigo1.png",
+        "status": "online",
+        "jogo": "Valorant",
+        "sala": "1"
+      },
+      {
+        "id": 2,
+        "username": "Rian",
+        "avatar": "imgs/amigo2.png",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 3,
+        "username": "Luan",
+        "avatar": "imgs/amigo3.png",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 4,
+        "username": "Pedro",
+        "avatar": "https://picsum.photos/200/200",
+        "status": "online",
+        "jogo": "Fortnite",
+        "sala": "2"
+      },
+      {
+        "id": 5,
+        "username": "Mariana",
+        "avatar": "https://picsum.photos/200/324",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 6,
+        "username": "Luiza",
+        "avatar": "https://picsum.photos/200/332",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 7,
+        "username": "Gustavo",
+        "avatar": "https://picsum.photos/200/231",
+        "status": "online",
+        "jogo": "Minecraft",
+        "sala": "3"
+      },
+      {
+        "id": 8,
+        "username": "Maria",
+        "avatar": "https://picsum.photos/200/301",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 9,
+        "username": "Lucas",
+        "avatar": "https://picsum.photos/200/300",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 10,
+        "username": "Fernanda",
+        "avatar": "https://picsum.photos/200/332",
+        "status": "online",
+        "jogo": "Among Us",
+        "sala": "1"
+      },
+      {
+        "id": 11,
+        "username": "Carlos",
+        "avatar": "https://picsum.photos/200/301",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 12,
+        "username": "Ana",
+        "avatar": "https://picsum.photos/200/306",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 13,
+        "username": "Laura",
+        "avatar": "https://picsum.photos/200/305",
+        "status": "online",
+        "jogo": "League of Legends",
+        "sala": "5"
+      },
+      {
+        "id": 14,
+        "username": "Gabriel",
+        "avatar": "https://picsum.photos/200/301",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      },
+      {
+        "id": 15,
+        "username": "Julia",
+        "avatar": "https://picsum.photos/200/300",
+        "status": "offline",
+        "jogo": "",
+        "sala": ""
+      }
+    ]
+  }
+  
