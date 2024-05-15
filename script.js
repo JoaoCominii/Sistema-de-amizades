@@ -21,7 +21,7 @@ statusSelect.addEventListener("change", function () {
 });
 
 // Array de amigos
-const amigos = [
+let amigos = [
   {
     id: 1,
     username: "João",
@@ -65,8 +65,8 @@ function atualizarContadores() {
     "(" + amigosOffline.querySelectorAll(".amigo").length + ")";
 }
 
-// Loop pelos amigos e cria um elemento para cada um
-amigos.forEach(function (amigo) {
+// Função para criar um elemento de amigo
+function criarElementoAmigo(amigo) {
   // Cria um elemento <div> para representar o amigo
   const divAmigo = document.createElement("div");
   divAmigo.classList.add("amigo");
@@ -91,27 +91,54 @@ amigos.forEach(function (amigo) {
     // Adiciona o jogo do amigo
     const pJogo = document.createElement("p");
     pJogo.textContent = "Jogando: " + amigo.jogo;
+    divInfo.classList.add("amigo-info-jogo");
     divInfo.appendChild(pJogo);
 
     // Adiciona a sala do amigo
     const pSala = document.createElement("p");
     pSala.textContent = "Sala: " + amigo.sala;
+    divInfo.classList.add("amigo-info-sala");
     divInfo.appendChild(pSala);
   }
 
-  // Adiciona as informações do amigo ao elemento <div>
+  // Adiciona o botão de remover amigo
+  const divBtn = document.createElement("div");
+  divBtn.classList.add("btn-remover-amigo-container");
+
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "REMOVER";
+  removeBtn.classList.add("btn-remover-amigo");
+  removeBtn.addEventListener("click", function () {
+    // Remove o amigo da lista
+    amigos = amigos.filter((a) => a.id !== amigo.id);
+
+    // Remove o elemento do amigo da interface
+    divAmigo.remove();
+
+    // Atualiza os contadores
+    atualizarContadores();
+  });
+  divBtn.appendChild(removeBtn);
+
+  // Adiciona o botão de remover amigo ao elemento <div>
   divAmigo.appendChild(divInfo);
+  divAmigo.appendChild(divBtn);
 
-  // Adiciona o elemento do amigo à seção apropriada com base no status
+  return divAmigo;
+}
+
+// Função para adicionar amigo
+function adicionarAmigo(amigo) {
+  const elementoAmigo = criarElementoAmigo(amigo);
   if (amigo.status === "online") {
-    amigosOnline.appendChild(divAmigo);
+    amigosOnline.appendChild(elementoAmigo);
   } else {
-    amigosOffline.appendChild(divAmigo);
+    amigosOffline.appendChild(elementoAmigo);
   }
+}
 
-  // Atualiza os contadores
-  atualizarContadores();
-});
+// Loop pelos amigos e adiciona-os à lista
+amigos.forEach(adicionarAmigo);
 
 // Barra de pesquisa
 const searchBar = document.getElementById("search-input");
@@ -131,3 +158,6 @@ searchBar.addEventListener("input", function () {
     }
   });
 });
+
+// Atualiza os contadores inicialmente
+atualizarContadores();

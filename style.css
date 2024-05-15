@@ -165,31 +165,55 @@ header h1 {
   height: 50px;
   border-radius: 50%;
   margin-left: 10px;
+  margin-bottom: 30px;
 }
 .amigo-info {
   display: flex; /* Ativa o flexbox para o conteúdo das informações do amigo */
   flex-direction: column; /* Empilha as informações verticalmente */
+  align-items: left;
 }
 
-.amigo-info h3 {
-  /* Estilos para o nome do amigo */
+
+/* Estilos para o nome dos amigos online */
+.amigos-online .amigo-info h3{
+  display: flex;
   font-size: 18px;
   margin-left: 12px;
+  margin-bottom: 25px;
+}
+/* Estilos para o jogando */
+.amigos-online .amigo-info-jogo p{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.amigo-info p:nth-child(2) {
-  /* Estilos para o jogo */
-  font-size: 14px;
+/* Estilos para a sala */
+.amigos-online .amigo-info-sala p{
+ display: flex;
+}
+
+/* Estilos para o nome dos amigos offline */
+.amigos-offline .amigo-info h3{
+  font-size: 18px;
+  margin-left: 12px;
+  margin-bottom: 25px;
+}
+
+
+.amigo-info p{
   color: #666;
-  margin-bottom: 3px;
   padding-left: 5px;
 }
 
 .amigo-info p:nth-child(3) {
   /* Estilos para o jogo */
+  font-size: 14px;
+}
+
+.amigo-info p:nth-child(4) {
+  /* Estilos para o sala */
   font-size: 12px;
-  color: #666;
-  padding-left: 5px;
 }
 
 /* Oflline */
@@ -204,6 +228,45 @@ header h1 {
   padding: 10px;
   background-color: #f0f0f0;
   border-bottom: 2px solid #ccc;
+}
+
+/* Estilo para o botão de remover amigo */
+.btn-remover-amigo {
+  align-items: center;
+  font-family: "Open Sans";
+  color: white;
+  font-size: 18px;
+  width: 120px;
+  background-color: #ff0000;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  margin-left: 300px; 
+}
+
+.btn-remover-amigo:hover {
+  background-color: #ca0c0c;
+}
+
+/* Estilo para o botão de entrar na sala */
+.btn-entrar-sala {
+  align-items: center;
+  font-family: "Open Sans";
+  color: white;
+  font-size: 18px;
+  width: 120px;
+  background-color: #4caf50; /* Cor verde */
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  margin-left: 2px; /* Espaçamento à direita */
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-entrar-sala:hover {
+  background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
 }
 
 /* Configuracao diferentes tamanhos de tela */
