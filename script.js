@@ -96,9 +96,23 @@ fetch("./db.json")
         // Atualiza os contadores
         atualizarContadores();
       });
+
+      // Adiciona o botão de entrar na sala apenas se o amigo estiver online
+      if (amigo.status === "online") {
+        const entrarSalaBtn = document.createElement("button");
+        entrarSalaBtn.textContent = "ENTRAR NA SALA";
+        entrarSalaBtn.classList.add("btn-entrar-sala");
+        // Por enquanto, o botão não terá funcionalidade
+        entrarSalaBtn.addEventListener("click", function () {
+          // Futuramente, adicionaremos a funcionalidade aqui
+          console.log(`Entrar na sala de ${amigo.username}`);
+        });
+        divBtn.appendChild(entrarSalaBtn);
+      }
+
       divBtn.appendChild(removeBtn);
 
-      // Adiciona o botão de remover amigo ao elemento <div>
+      // Adiciona os botões ao elemento <div>
       divAmigo.appendChild(divInfo);
       divAmigo.appendChild(divBtn);
 

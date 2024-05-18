@@ -36,8 +36,7 @@ header h1 {
   font-size: 28px;
   align-items: center;
   display: flex;
-  position: absolute
-  justify-content center;
+  position: absolute justify-content center;
   margin-right: 60px;
 }
 
@@ -122,13 +121,29 @@ header h1 {
 .add-friends {
   display: flex;
   align-items: center;
-  margin-top: 10px;;
+  margin-top: 10px;
 }
 
 #add-friends-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+  background: none; /* Remove o background padrão */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Adiciona o cursor de pointer ao passar o mouse */
+  padding: 8px;
+  border-radius: 50%; /* Torna o botão circular */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo */
+}
+
+#add-friends-btn:hover {
+  background-color: rgba(
+    3,
+    91,
+    255,
+    0.2
+  ); /* Muda a cor de fundo ao passar o mouse */
+}
+
+#add-friends-btn:hover i {
+  color: #0365ff; /* Muda a cor do ícone ao passar o mouse */
 }
 
 /* Estilos para a lista de amigos */
@@ -150,7 +165,7 @@ header h1 {
   border-bottom: 2px solid #ccc;
 }
 
-.contador  {
+.contador {
   margin-right: 1700px;
 }
 
@@ -172,16 +187,15 @@ header h1 {
   align-items: left;
 }
 
-
 /* Estilos para o nome dos amigos online */
-.amigos-online .amigo-info h3{
+.amigos-online .amigo-info h3 {
   display: flex;
   font-size: 18px;
   margin-left: 12px;
   margin-bottom: 3px;
 }
 /* Estilos para o jogando */
-.amigos-online .amigo-info-jogo p{
+.amigos-online .amigo-info-jogo p {
   position: absolute;
   display: flex;
   align-items: center;
@@ -189,19 +203,18 @@ header h1 {
 }
 
 /* Estilos para a sala */
-.amigos-online .amigo-info-sala p{
- display: flex;
+.amigos-online .amigo-info-sala p {
+  display: flex;
 }
 
 /* Estilos para o nome dos amigos offline */
-.amigos-offline .amigo-info h3{
+.amigos-offline .amigo-info h3 {
   font-size: 18px;
   margin-left: 12px;
   margin-bottom: 25px;
 }
 
-
-.amigo-info p{
+.amigo-info p {
   color: #666;
   padding-left: 5px;
 }
@@ -232,7 +245,7 @@ header h1 {
 
 /* Estilo para o botão de remover amigo */
 
-.btn-remover-amigo{
+.btn-remover-amigo {
   font-family: "Open Sans";
   color: white;
   font-size: 18px;
@@ -242,7 +255,7 @@ header h1 {
   cursor: pointer;
   padding: 5px;
   border-radius: 8px;
-  right: 45%;
+  right: 60%;
   position: absolute;
 }
 
@@ -252,26 +265,31 @@ header h1 {
 
 /* Estilo para o botão de entrar na sala */
 .btn-entrar-sala {
-  align-items: center;
   font-family: "Open Sans";
   color: white;
   font-size: 18px;
-  width: 120px;
-  background-color: #4caf50; /* Cor verde */
+  width: 170px;
+  background-color: #ff0000;
   border: none;
+  cursor: pointer;
   padding: 5px;
   border-radius: 8px;
-  margin-left: 2px; /* Espaçamento à direita */
-  outline: none;
-  cursor: pointer;
+  right: 70%;
+  text-align: center;
+  position: absolute;
+}
+
+.btn-entrar-sala {
+  background-color: #45a049; /* Cor verde */
 }
 
 .btn-entrar-sala:hover {
   background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
 }
 
-/* Configuracao diferentes tamanhos de tela */
+/* Configurações para diferentes tamanhos de tela */
 
+/* Configurações para telas de até 768px (Tablets e Celulares) */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -288,10 +306,14 @@ header h1 {
 
   header h1 {
     margin-top: 10px;
+    position: static;
   }
 
   .search-friends {
-    margin-left: 0;
+    margin-top: 10px;
+    right: 0;
+    width: 100%;
+    justify-content: center;
   }
 
   .add-friends {
@@ -301,8 +323,150 @@ header h1 {
   #lista-amigos {
     margin-top: 10px;
   }
-  /* Estilo para barra de pesquisa*/
+
   .search-friends {
-    margin-left: 200px;
+    margin-left: 0;
+  }
+
+  .btn-remover-amigo {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .btn-entrar-sala {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .amigo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .amigos-online .amigo-info h3,
+  .amigos-offline .amigo-info h3 {
+    font-size: 17px;
+  }
+
+  .amigo-info p {
+    font-size: 13px;
   }
 }
+
+/* Configurações para telas entre 769px e 1024px (Laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-info {
+    margin-top: 10px;
+  }
+
+  .profile-name {
+    margin-left: 0;
+  }
+
+  header h1 {
+    margin-top: 10px;
+    position: static;
+  }
+
+  .search-friends {
+    margin-top: 10px;
+    right: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .add-friends {
+    margin-top: 10px;
+  }
+
+  #lista-amigos {
+    margin-top: 10px;
+  }
+
+  .search-friends {
+    margin-left: 0;
+  }
+
+  .btn-remover-amigo {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .btn-entrar-sala {
+    position: static;
+    width: 80px;
+    margin-top: 10px;
+  }
+
+  .amigo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .amigos-online .amigo-info h3,
+  .amigos-offline .amigo-info h3 {
+    font-size: 17px;
+  }
+
+  .amigo-info p {
+    font-size: 13px;
+  }
+}
+
+/* Configurações para telas entre 1025px e 1280px (Desktops menores) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  header {
+    padding: 10px;
+  }
+
+  .profile-name {
+    font-size: 17px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  .search-friends {
+    height: 28px;
+    padding: 8px;
+  }
+
+  .search-txt {
+    font-size: 11px;
+  }
+
+  .search-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-remover-amigo,
+  .btn-entrar-sala {
+    font-size: 17px;
+    padding: 5px;
+  }
+
+  .amigo-info p {
+    font-size: 11px;
+  }
+
+  .amigo-info p:nth-child(3),
+  .amigo-info p:nth-child(4) {
+    font-size: 11px;
+  }
+
+  .amigos-online .amigo-info h3,
+  .amigos-offline .amigo-info h3 {
+    font-size: 15px;
+  }
+}
+
