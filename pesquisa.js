@@ -69,13 +69,19 @@ function carregarUsuariosParaPesquisa(data) {
   });
 
   // Adiciona o evento de click para adicionar amigos
+  // Adiciona o evento de click para adicionar amigos
   searchResults.addEventListener("click", function (event) {
     if (event.target.classList.contains("btn-add-friend")) {
       const userId = parseInt(event.target.getAttribute("data-id"));
       const user = data.usuarios.find((user) => user.id === userId);
 
       if (user) {
-        data.amigos.push(user);
+        data.solicitacoesAmizade.push({
+          id: Date.now(),
+          de: 1, // Substitua pelo ID do usuário logado
+          para: user.id,
+          status: "pendente",
+        });
         salvarDadosLocalStorage(data);
         alert(`Solicitação de amizade enviada para ${user.username}`);
       }
