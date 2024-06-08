@@ -284,7 +284,7 @@ header h1 {
 }
 
 .btn-entrar-sala:hover {
-  background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
+  background-color: #3e8f42; /* Cor verde mais escura ao passar o mouse */
 }
 
 /* Configurações para diferentes tamanhos de tela */
@@ -470,3 +470,147 @@ header h1 {
   }
 }
 
+/* Estilo para pagina pesquisa.html */
+
+/* Estilo para titulo */
+#adicionar-amigos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  font-size: 30px;
+}
+
+/* Estilos para as imagens dos usuários */
+#search-results img {
+  width: 60px; /* Define a largura da imagem */
+  height: 60px; /* Define a altura da imagem */
+  border-radius: 50%; /* Cria uma borda arredondada */
+  margin-right: 15px; /* Adiciona um espaçamento à direita das imagens */
+  margin-top: 30px;
+}
+
+/* Estilos para o nome do usuário */
+#search-results span {
+  color: #333; /* Define a cor do texto */
+  font-weight: bold; /* Define o peso da fonte como negrito */
+  font-size: 32px; /* Define o tamanho da fonte */
+  position: absolute;
+  margin-top: 41px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilos para o botão de adicionar */
+.btn-add-friend {
+  background-color: #09eb01; /* Define a cor de fundo do botão */
+  color: #f0f0f0; /* Define a cor do texto do botão */
+  border: none; /* Remove a borda do botão */
+  padding: 5px 10px; /* Adiciona preenchimento interno ao botão */
+  cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+  border-radius: 10px; /* Adiciona borda arredondada ao botão */
+  right: 65%;
+  position: absolute;
+  margin-top: 44px;
+  width: 300px;
+  font-size: 18px;
+}
+
+/* Estilos para o botão de adicionar ao passar o mouse */
+.btn-add-friend:hover {
+  background-color: #09d601; /* Altera a cor de fundo ao passar o mouse */
+}
+
+/* Estilos para barra de pesquisa */
+.search-users {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  margin-top: 5px;
+  right: 40%;
+  background-color: #0a1b2d;
+  height: 30px;
+  padding: 10px;
+  border-radius: 40px;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.search-txt2 {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 10px; /* Ajuste o padding conforme necessário */
+  color: white;
+  font-size: medium; /* Ajuste o tamanho da fonte conforme necessário */
+  line-height: 40px;
+  width: 80%; /* Ajuste a largura conforme necessário */
+  font-family: "Open Sans";
+}
+
+/* Estilos para o h2 */
+#users {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  margin-top: 120px;
+}
+
+/* Estilos para nav bar*/
+.navbar {
+  background: linear-gradient(to right, rgb(241, 240, 240) 50%, lightgray 50%);
+  padding: 10px 0;
+  position: fixed;
+  width: 35%;
+  top: 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-list li {
+  display: inline;
+  margin: 0 104px;
+}
+
+
+
+.nav-list li a {
+  text-decoration: none;
+  color: rgb(58, 54, 54);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.content {
+  margin-top: 60px; /* Para garantir que o conteúdo não fique escondido sob a navbar */
+}
+
+#amigos-img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  position: inherit;
+  bottom: 95.6%;
+  right: 95%;
+}
+
+#pedidos-img {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  position: inherit;
+  bottom: 96%;
+  right: 80.2%;
+}
