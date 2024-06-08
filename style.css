@@ -583,8 +583,6 @@ ul {
   margin: 0 104px;
 }
 
-
-
 .nav-list li a {
   text-decoration: none;
   color: rgb(58, 54, 54);
@@ -592,6 +590,9 @@ ul {
   font-size: 20px;
 }
 
+.nav-list li a:hover {
+  color: rgb(0, 0, 0);
+}
 
 .content {
   margin-top: 60px; /* Para garantir que o conteúdo não fique escondido sob a navbar */
@@ -613,4 +614,77 @@ ul {
   position: inherit;
   bottom: 96%;
   right: 80.2%;
+}
+
+/* Estilo para pagina solicitacoes.html */
+
+.solicitacoes-h1{
+  text-align: center;
+}
+
+.solicitacoes-container {
+  margin-top: 60px; /* Para garantir que o conteúdo não fique escondido sob a navbar */
+  font-family: Arial, sans-serif;
+}
+
+.solicitacoes-title {
+  margin-left: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+}
+
+#solicitacoes-title {
+  margin-top: 20px;
+}
+
+#solicitacoes-subtitle {
+  margin-top: 120px;
+}
+
+.solicitacoes-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.solicitacoes-list li {
+  color: #333; /* Define a cor do texto */
+  font-weight: bold; /* Define o peso da fonte como negrito */
+  font-size: 32px; /* Define o tamanho da fonte */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.solicitacao-avatar {
+  margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.solicitacoes-list li span {
+  flex-grow: 1;
+}
+
+.solicitacoes-list li button {
+  padding: 5px 10px;
+  width: 180px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: #09eb01;
+  color: white;
+  border-radius: 10px;
+  right: 75%;
+  position: absolute;
+}
+
+.solicitacoes-list li button:hover {
+  background-color: #09d601;
 }

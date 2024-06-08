@@ -126,9 +126,11 @@
       { "id": 2, "username": "Messi", "avatar": "https://picsum.photos/200/308" },
       { "id": 3, "username": "Ronaldo", "avatar": "https://picsum.photos/200/302" }
     ],
-    "solicitacoesAmizade": [
-      { "id": 1, "de": 1, "para": 2, "status": "pendente" }
-    ]
+   "solicitacoesAmizade": [
+  { "id": 1, "de": 1, "para": 2, "status": "pendente" },
+  { "id": 2, "de": 3, "para": 1, "status": "pendente" },
+  { "id": 3, "de": 2, "para": 1, "status": "pendente" }
+  ]
   }
   
   
