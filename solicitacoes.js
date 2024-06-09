@@ -5,7 +5,7 @@ const userId = 1; // Defina o ID do usuário logado aqui
 localStorage.setItem("userId", userId);
 
 // Recupera o ID do usuário logado do localStorage
-const loggedUserId = localStorage.getItem("userId");
+const loggedUserId = parseInt(localStorage.getItem("userId"));
 
 console.log("ID do usuário logado:", loggedUserId);
 
@@ -43,57 +43,29 @@ function inicializarDados() {
   }
 }
 
-// Função para carregar as solicitações de amizade
-function carregarSolicitacoes(data) {
-  const pedidosRecebidos = document.getElementById("pedidos-recebidos");
+// Função para carregar as solicitações enviadas
+function carregarSolicitacoesEnviadas(data) {
   const pedidosEnviados = document.getElementById("pedidos-enviados");
-
-  pedidosRecebidos.innerHTML = "";
   pedidosEnviados.innerHTML = "";
 
-  data.solicitacoesAmizade.forEach((solicitacao) => {
-    const user = data.usuarios.find((user) => user.id === solicitacao.de);
-    const li = document.createElement("li");
+  const solicitacoesEnviadas = data.solicitacoesAmizade.filter(
+    (solicitacao) => solicitacao.de === loggedUserId
+  );
+  solicitacoesEnviadas.forEach((solicitacao) => {
+    const user = data.usuarios.find((user) => user.id === solicitacao.para);
 
-    const imgAvatar = document.createElement("img");
-    imgAvatar.src = user.avatar;
-    imgAvatar.alt = user.username;
-    imgAvatar.classList.add("solicitacao-avatar");
+    if (user) {
+      const li = document.createElement("li");
+      const imgAvatar = document.createElement("img");
+      imgAvatar.src = user.avatar;
+      imgAvatar.alt = user.username;
+      imgAvatar.classList.add("avatar");
+      const spanUsername = document.createElement("span");
+      spanUsername.textContent = user.username;
 
-    const spanUsername = document.createElement("span");
-    spanUsername.textContent = user.username;
+      const divRemoverEnviados = document.createElement("div");
+      divRemoverEnviados.classList.add("btn-remover-enviados-container");
 
-    if (solicitacao.para === 1) {
-      const btnAceitar = document.createElement("button");
-      btnAceitar.textContent = "Aceitar";
-      btnAceitar.classList.add("btn-aceitar");
-      btnAceitar.addEventListener("click", () => {
-        data.amigos.push(user);
-        data.solicitacoesAmizade = data.solicitacoesAmizade.filter(
-          (s) => s.id !== solicitacao.id
-        );
-        salvarDadosLocalStorage(data);
-        carregarSolicitacoes(data);
-      });
-
-      const btnRemover = document.createElement("button");
-      btnRemover.textContent = "Remover";
-      btnRemover.classList.add("btn-remover");
-      btnRemover.addEventListener("click", () => {
-        data.solicitacoesAmizade = data.solicitacoesAmizade.filter(
-          (s) => s.id !== solicitacao.id
-        );
-        salvarDadosLocalStorage(data);
-        carregarSolicitacoes(data);
-      });
-
-      li.appendChild(imgAvatar);
-      li.appendChild(spanUsername);
-      li.appendChild(btnAceitar);
-      li.appendChild(btnRemover);
-      pedidosRecebidos.appendChild(li);
-    } 
-    if (solicitacao.de === 1) {
       const btnRemover = document.createElement("button");
       btnRemover.textContent = "REMOVER";
       btnRemover.classList.add("btn-remover");
@@ -105,12 +77,109 @@ function carregarSolicitacoes(data) {
         carregarSolicitacoes(data);
       });
 
+      divRemoverEnviados.appendChild(btnRemover);
+
       li.appendChild(imgAvatar);
       li.appendChild(spanUsername);
-      li.appendChild(btnRemover);
+      li.appendChild(divRemoverEnviados);
       pedidosEnviados.appendChild(li);
     }
   });
+}
+
+// Função para carregar as solicitações recebidas
+function carregarSolicitacoesRecebidas(data) {
+  const pedidosRecebidos = document.getElementById("pedidos-recebidos");
+  pedidosRecebidos.innerHTML = "";
+
+  const solicitacoesRecebidas = data.solicitacoesAmizade.filter(
+    (solicitacao) => solicitacao.para === loggedUserId
+  );
+  solicitacoesRecebidas.forEach((solicitacao) => {
+    const user = data.usuarios.find((user) => user.id === solicitacao.de);
+
+    if (user) {
+      const li = document.createElement("li");
+      const imgAvatar = document.createElement("img");
+      imgAvatar.src = user.avatar;
+      imgAvatar.alt = user.username;
+      imgAvatar.classList.add("avatar");
+      const spanUsername = document.createElement("span");
+      spanUsername.textContent = user.username;
+
+      const divAceitar = document.createElement("div");
+      divAceitar.classList.add("btn-aceitar-container");
+
+      const btnAceitar = document.createElement("button");
+      btnAceitar.textContent = "ACEITAR";
+      btnAceitar.classList.add("btn-aceitar");
+      btnAceitar.addEventListener("click", () => {
+        const novoAmigo = {
+          id:
+            data.amigos.length > 0
+              ? data.amigos[data.amigos.length - 1].id + 1
+              : 1,
+          username: user.username,
+          avatar: user.avatar,
+          status: "offline",
+          jogo: "",
+          sala: "",
+        };
+        data.amigos.push(novoAmigo);
+        data.solicitacoesAmizade = data.solicitacoesAmizade.filter(
+          (s) => s.id !== solicitacao.id
+        );
+        salvarDadosLocalStorage(data);
+        carregarSolicitacoes(data);
+      });
+
+      divAceitar.appendChild(btnAceitar);
+
+      const divRemoverRecebidos = document.createElement("div");
+      divRemoverRecebidos.classList.add("btn-remover-recebidos-container");
+
+      const btnRemover = document.createElement("button");
+      btnRemover.textContent = "REMOVER";
+      btnRemover.classList.add("btn-remover");
+      btnRemover.addEventListener("click", () => {
+        data.solicitacoesAmizade = data.solicitacoesAmizade.filter(
+          (s) => s.id !== solicitacao.id
+        );
+        salvarDadosLocalStorage(data);
+        carregarSolicitacoes(data);
+      });
+
+      divRemoverRecebidos.appendChild(btnRemover);
+
+      li.appendChild(imgAvatar);
+      li.appendChild(spanUsername);
+      li.appendChild(divAceitar);
+      li.appendChild(divRemoverRecebidos);
+      pedidosRecebidos.appendChild(li);
+    }
+  });
+}
+
+// Função para carregar todas as solicitações
+function carregarSolicitacoes(data) {
+  carregarSolicitacoesEnviadas(data);
+  carregarSolicitacoesRecebidas(data);
+}
+
+// Função para enviar solicitação de amizade
+function enviarSolicitacaoAmizade(destinatarioId) {
+  const data = carregarDadosLocalStorage();
+
+  const novaSolicitacao = {
+    id: data.solicitacoesAmizade.length + 1, // ID da nova solicitação
+    de: loggedUserId, // ID do usuário logado
+    para: destinatarioId, // ID do destinatário
+    status: "pendente",
+  };
+
+  data.solicitacoesAmizade.push(novaSolicitacao);
+  salvarDadosLocalStorage(data);
+  carregarSolicitacoes(data);
 }
 
 document.addEventListener("DOMContentLoaded", inicializarDados);

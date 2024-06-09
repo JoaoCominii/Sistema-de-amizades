@@ -250,7 +250,7 @@ header h1 {
   color: white;
   font-size: 18px;
   width: 120px;
-  background-color: #ff0000;
+  background-color: #f44336;
   border: none;
   cursor: pointer;
   padding: 5px;
@@ -260,7 +260,7 @@ header h1 {
 }
 
 .btn-remover-amigo:hover {
-  background-color: #ca0c0c;
+  background-color: #d32f2f;
 }
 
 /* Estilo para o botão de entrar na sala */
@@ -269,22 +269,18 @@ header h1 {
   color: white;
   font-size: 18px;
   width: 170px;
-  background-color: #ff0000;
   border: none;
   cursor: pointer;
   padding: 5px;
   border-radius: 8px;
   right: 70%;
   text-align: center;
+  background-color: #4caf50; /* Cor verde */
   position: absolute;
 }
 
-.btn-entrar-sala {
-  background-color: #45a049; /* Cor verde */
-}
-
 .btn-entrar-sala:hover {
-  background-color: #3e8f42; /* Cor verde mais escura ao passar o mouse */
+  background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
 }
 
 /* Configurações para diferentes tamanhos de tela */
@@ -505,7 +501,7 @@ ul {
 
 /* Estilos para o botão de adicionar */
 .btn-add-friend {
-  background-color: #09eb01; /* Define a cor de fundo do botão */
+  background-color: #4caf50; /* Define a cor de fundo do botão */
   color: #f0f0f0; /* Define a cor do texto do botão */
   border: none; /* Remove a borda do botão */
   padding: 5px 10px; /* Adiciona preenchimento interno ao botão */
@@ -520,7 +516,7 @@ ul {
 
 /* Estilos para o botão de adicionar ao passar o mouse */
 .btn-add-friend:hover {
-  background-color: #09d601; /* Altera a cor de fundo ao passar o mouse */
+  background-color: #45a049; /* Altera a cor de fundo ao passar o mouse */
 }
 
 /* Estilos para barra de pesquisa */
@@ -618,7 +614,7 @@ ul {
 
 /* Estilo para pagina solicitacoes.html */
 
-.solicitacoes-h1{
+.solicitacoes-h1 {
   text-align: center;
 }
 
@@ -659,32 +655,51 @@ ul {
   align-items: center;
   margin-bottom: 10px;
   padding: 10px;
+  margin-top: 20px;
+  position: relative;
+  gap: 10px;
 }
 
-.solicitacao-avatar {
-  margin-right: 10px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-.solicitacoes-list li span {
-  flex-grow: 1;
-}
-
-.solicitacoes-list li button {
-  padding: 5px 10px;
-  width: 180px;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  background-color: #09eb01;
-  color: white;
-  border-radius: 10px;
-  right: 75%;
+/* Estilizando o botão de aceitar */
+.btn-aceitar {
+  background-color: #4caf50; /* Cor de fundo verde */
+  color: white; /* Cor do texto branca */
+  border: none; /* Removendo borda */
+  padding: 10px 20px; /* Adicionando espaçamento interno */
+  font-size: 18px; /* Tamanho da fonte */
+  cursor: pointer; /* Alterando o cursor ao passar por cima */
   position: absolute;
+  right: 75%;
+  border-radius: 10px;
+  width: 180px;
+  top: 30%;
 }
 
-.solicitacoes-list li button:hover {
-  background-color: #09d601;
+.btn-aceitar:hover {
+  background-color: #45a049; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+/* Estilizando o botão de remover */
+.btn-remover {
+  background-color: #f44336; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branca */
+  border: none; /* Removendo borda */
+  padding: 10px 20px; /* Adicionando espaçamento interno */
+  font-size: 18px; /* Tamanho da fonte */
+  cursor: pointer; /* Alterando o cursor ao passar por cima */
+  right: 60%;
+  position: absolute;
+  border-radius: 10px;
+  width: 180px;
+  top: 30%;
+}
+
+.btn-remover:hover {
+  background-color: #d32f2f; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+.avatar {
+  width: 50px; /* Largura desejada */
+  height: 50px; /* Altura desejada */
+  border-radius: 50%; /* Faz com que o avatar fique redondo, se desejado */
 }
