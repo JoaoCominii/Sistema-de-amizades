@@ -68,7 +68,7 @@ header h1 {
   position: absolute;
   align-items: center;
   margin-top: 5px;
-  right: 3.5%;
+  right: 6%;
   background-color: #0a1b2d;
   height: 30px;
   padding: 10px;
@@ -122,6 +122,8 @@ header h1 {
   display: flex;
   align-items: center;
   margin-top: 10px;
+  right: 3%;
+  position: absolute;
 }
 
 #add-friends-btn {
@@ -142,9 +144,30 @@ header h1 {
   ); /* Muda a cor de fundo ao passar o mouse */
 }
 
-#add-friends-btn:hover i {
-  color: #0365ff; /* Muda a cor do ícone ao passar o mouse */
+/* Estilo para botão de pedidos pendentes */
+.solicitacoes {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
+
+#solicitacoes-btn {
+  background: none; /* Remove o background padrão */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Adiciona o cursor de pointer ao passar o mouse */
+  padding: 8px;
+  border-radius: 50%; /* Torna o botão circular */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo */
+}
+#solicitacoes-btn:hover {
+  background-color: rgba(
+    3,
+    91,
+    255,
+    0.2
+  ); /* Muda a cor de fundo ao passar o mouse */
+}
+
 
 /* Estilos para a lista de amigos */
 

@@ -122,9 +122,9 @@
       }
     ],
     "usuarios": [
-      { "id": 1, "username": "Travis", "avatar": "https://picsum.photos/200/303" },
-      { "id": 2, "username": "Messi", "avatar": "https://picsum.photos/200/308" },
-      { "id": 3, "username": "Ronaldo", "avatar": "https://picsum.photos/200/302" }
+      { "id": 2, "username": "Travis", "avatar": "https://picsum.photos/200/303" },
+      { "id": 3, "username": "Messi", "avatar": "https://picsum.photos/200/308" },
+      { "id": 4, "username": "Ronaldo", "avatar": "https://picsum.photos/200/302" }
     ],
    "solicitacoesAmizade": [
   { "id": 1, "de": 1, "para": 2, "status": "pendente" },
